@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:first_app/components/text_default.dart';
+import 'package:first_app/components/button_primary.dart';
 
 const startAlignment = Alignment.topLeft;
 const endAlignment = Alignment.bottomRight;
@@ -12,6 +12,9 @@ class GradientContainer extends StatelessWidget {
 
   final List<Color> colors;
 
+  void rollDice() {
+  }
+
   @override
   Widget build(context) {
     return Container(
@@ -22,8 +25,20 @@ class GradientContainer extends StatelessWidget {
           end: endAlignment,
         )
       ),
-      child: const Center(
-        child: TextDefault('Hello World!'),
+      child: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset(
+              'assets/images/dice-1.png',
+              width: 200,
+            ),
+            ButtonPrimary(
+              onPressed: rollDice,
+              text: 'Roll Dice'
+            )
+          ],
+        )
       ),
     );
   }
