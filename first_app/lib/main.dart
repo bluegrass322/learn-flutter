@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+
 import 'package:first_app/components/gradient_container.dart';
+import 'package:first_app/constants/user_colors.dart';
 
 void main() {
-  runApp(const MaterialApp(
+  runApp(MaterialApp(
     home: Scaffold(
-      body: GradientContainer()
+      body: GradientContainer(
+              colors: [
+                UserColors.turquoise,
+                UserColors.tomato,
+              ],
+            )
     ),
   ));
 }
